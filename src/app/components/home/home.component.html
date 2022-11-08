@@ -1,0 +1,48 @@
+<app-nav></app-nav>
+<div class="principal-home">
+  <div class="div-text">
+    <h3>Como minimizar las perdidas</h3>
+    <p>A la mayoría nos gusta mucho los deportes, a veces los disfrutamos e incluso apostamos algún valor monetario para
+      recibir una rentabilidad, pero en muchas ocasiones se tiende a perder siempre
+      <br>
+      <br>
+      Sin embargo con un poco de analisis y no dejarse llevar por las emociones podemos minimizar las perdidas y hasta
+      subir su saldo
+      te enseñamos algunos tips y te brindamos unos pronosticos.......
+    </p>
+    <button class="btn btn-primary">Leer Más...</button>
+  </div>
+  <div class="div-img">
+    <img class="img-div-img" src="./assets/image/sport.jpg" alt="">
+  </div>
+</div>
+<div class="calculo-juego">
+  <div class="div-calculo">
+    <h3>Calcula tu presupuesto para apostar</h3>
+    <p>
+      Realizar un presupuesto para apostar le ayudará a saber hasta donde puede gastar, recuerde que las apuestas
+      deportivas
+      son un juego de azar por lo tanto le garantiza una apuesta, por segura que parezca todo tiene un riesgo.
+      <br>
+      <br>
+      Le presentamos nuestra calculadora para que realice su balance
+    </p>
+    <form class="form-cal" id="form-cal" #myForm="ngForm">
+      <div class="input-group mb-3">
+        <span class="input-group-text">$</span><input required class="form-control" type="number" [(ngModel)]="ingreso"
+          name="ingreso" placeholder="Ingreso mensual en pesos colombianos">
+      </div>
+
+      <input [disabled]="myForm.invalid" class="btn btn-success btn-rig" type="submit" value="Calcular" (click)="calcular()"
+        (click)="visibilidad('#div-det', true)">
+      <input class="btn btn-secondary btn-limpiar" type="reset" value="Limpiar"
+        (click)="visibilidad('#div-det', false)">
+    </form>
+    <div id="div-det" class="div-det">
+      <p class="p-det">Monto cual se sugiere apostar de acuerdo a sus ingresos</p>
+      <p class="p-det"><strong>Esta es su sugerencia:</strong> {{resultado | currency:'$'}}</p>
+      <p><strong>De acuerdo a su sugerencia su ganancia trabajandola de forma correcta puede estar: {{interes | currency:'$'}}</strong></p>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

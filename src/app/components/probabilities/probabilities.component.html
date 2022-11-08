@@ -1,0 +1,35 @@
+<div class="div-pri">
+  <div class="div-sec" *ngFor="let prob of probability | ObjToArray">
+    <div class="div-ter">
+      <span class="span-cn">{{ prob.country_name}}</span>
+      <span class="span-ln">{{ prob.league_name}}</span>
+    </div>
+    <span class="span-date">{{prob.event_date | date}}</span>
+    <span class="span-hour">{{prob.event_time}}</span>
+    <div class="div-teams">
+      <img>
+      <span>{{ prob.event_home_team}}</span>
+    </div>
+    <div class="div-teams">
+      <img>
+      <span>{{ prob.event_away_team}}</span>
+    </div>
+  </div>
+
+  <div class="div-cua">
+    <div class="div-sec-2" *ngFor="let prob of probability | ObjToArray">
+      <span class="label-es">Estado Evento : {{ prob.event_status}}
+      </span>
+      <div class="div-res">
+        <label class="label-es">Pronostico Medio tiempo</label><span
+          class="span-es">{{prob.event_halftime_result}}</span>
+        <label class="label-es">Pronostico final</label><span class="span-es">{{prob.event_final_result}}</span>
+        <label class="label-es">Resultado final</label><span class="span-es">{{prob.event_ft_result}}</span>
+      </div>
+      <app-odds></app-odds>
+    </div>
+  </div>
+</div>
+<div>
+  <app-fixtures></app-fixtures>
+</div>

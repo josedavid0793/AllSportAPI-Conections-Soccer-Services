@@ -1,0 +1,78 @@
+<div class="lay-pri">
+  <div class="lay-sup" *ngFor="let fixture of fixtures | ObjToArray">
+    <div class="div-lea">
+      <img class="img-fix-2" src="{{fixture.country_logo}}"><span class="span-co">{{fixture.country_name}}</span>
+      <img class="img-fix-2" src="{{fixture.league_logo}}"><span class="span-co">{{fixture.league_name}}</span>
+    </div>
+    <div class="divsup-flex">
+      <div class="div-fix-flex">
+        <div class="div-fix">
+          <img class="img-fix" src="{{fixture.home_team_logo}}"><span>{{fixture.event_home_team}}</span>
+        </div>
+        <div class="div-result">
+          <div>
+            <span>{{fixture.event_date | date:'shortDate'}}</span><span class="span-time">{{fixture.event_time}}</span>
+          </div>
+          <span>{{fixture.event_ft_result}}</span>
+          <span>{{fixture.event_status}}</span>
+          <a class="a-more" (click)="showDetailFixture(fixture.event_key)" (click)="HiddenDetail()">{{moreDetail}}</a>
+        </div>
+        <div class="div-fix">
+          <img class="img-fix" src="{{fixture.away_team_logo}}"><span>{{fixture.event_away_team}}</span>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="showHidden">
+      <div class="div-option">
+        <a class="a-option">Partido</a>
+        <a class="a-option">Cuotas</a>
+        <a class="a-option">H2H</a>
+        <a class="a-option">Clasificación</a>
+      </div>
+      <hr>
+      <div class="div-option">
+        <a class="a-option-2">Resumen</a>
+        <a class="a-option-2">Alineaciones</a>
+      </div>
+      <div class="first-time">
+        <div>1ER TIEMPO</div>
+        <div>
+          {{fixture.event_halftime_result}}
+        </div>
+      </div>
+      <div *ngFor="let fixture of eventchosen">
+        <div class="div-scorer" *ngFor="let goalscore of fixture.goalscorers">
+          <div>
+            <span class="time-score">{{goalscore.time}}'</span><span class="goal-score">{{goalscore.score}}</span><span
+              class="scorer-score">{{goalscore.home_scorer}}</span>
+          </div>
+          <div>
+            <span class="scorer-score">{{goalscore.away_scorer}}</span><span
+              class="goal-score">{{goalscore.score}}</span><span class="time-score">{{goalscore.time}}'</span>
+          </div>
+        </div>
+      </div>
+      <div class="first-time">
+        <div>2DO TIEMPO</div>
+        <div>
+          {{fixture.event_ft_result}}
+        </div>
+      </div>
+      <div *ngFor="let fixture of eventchosen">
+        <div class="div-scorer" *ngFor="let goalscore of fixture.goalscorers">
+          <div>
+            <span class="time-score">{{goalscore.time}}'</span><span class="goal-score">{{goalscore.score}}</span><span
+              class="scorer-score">{{goalscore.home_scorer}}</span>
+          </div>
+          <div *ngIf="">
+            <span class="scorer-score">{{goalscore.away_scorer}}</span><span
+              class="goal-score">{{goalscore.score}}</span><span class="time-score">{{goalscore.time}}'</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+
+  </div>
+
+</div>

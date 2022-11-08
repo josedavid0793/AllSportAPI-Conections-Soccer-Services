@@ -1,0 +1,14 @@
+<div class="div-country">
+  <div class="div-2-country">
+    <button (click)="HiddenCountry()" class="button-pro">Paises</button>
+    <div *ngIf="showHidden" class="hidden-pro">
+
+      <ul *ngFor="let contry of countries | ObjToArray">
+        <li><img class="img-countrie" src="{{ contry.country_logo }}" alt=""><a class="a-countrie">{{
+            contry.country_name }}</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+</div>
