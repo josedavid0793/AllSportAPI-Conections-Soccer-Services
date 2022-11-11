@@ -1,17 +1,23 @@
 <app-nav></app-nav>
-<div class="div-leagues">
-  <div class="div-2-leagues">
-    <button (click)="HiddenLeague()" class="button-pro">Ligas</button>
-    <div *ngIf="showHidden" class="hidden-pro">
-      <ul *ngFor="let league of leagues | ObjToArray">
-        <li><img class="img-league" src="{{ league.league_logo }}" alt=""><a class="a-league">{{ league.league_name }}</a>
-        </li>
-      </ul>
-    </div>
+<div class="div-prin">
+  <div class="div-leagues">
+    <div class="div-2-leagues">
+      <button (click)="HiddenLeague()" class="button-pro">Ligas</button>
+      <div *ngIf="showHidden" class="hidden-pro">
+        <ul *ngFor="let league of leagues | ObjToArray">
+          <li><img class="img-league" src="{{ league.league_logo }}" alt=""><a class="a-league">{{ league.league_name }}</a>
+          </li>
+        </ul>
+      </div>
 
-    <app-countries></app-countries>
+      <app-countries></app-countries>
+
+    </div>
   </div>
+  <app-fixtures></app-fixtures>
 </div>
+
+
 <app-probabilities></app-probabilities>
 
 <app-footer></app-footer>

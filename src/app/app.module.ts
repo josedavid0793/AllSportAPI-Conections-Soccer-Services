@@ -14,6 +14,7 @@ import { FixturesComponent } from './components/fixtures/fixtures.component';
 import { CountriesComponent } from './components/countries/countries.component';
 import { ProbabilitiesComponent } from './components/probabilities/probabilities.component';
 import { OddsComponent } from './components/odds/odds.component';
+import { HeadToheadComponent } from './component/head-tohead/head-tohead.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { OddsComponent } from './components/odds/odds.component';
     FixturesComponent,
     CountriesComponent,
     ProbabilitiesComponent,
-    OddsComponent
+    OddsComponent,
+    HeadToheadComponent
   ],
   imports: [
     BrowserModule,
