@@ -34,4 +34,7 @@ export class SoccerService {
   getOdds():Observable<any>{
     return this.http.get(`https://apiv2.allsportsapi.com/football/?&met=Odds&matchId=86392&APIkey=${this.key}`)
   }
+  getH2H(firstTeamId:String,secondTeamId:String):Observable<any>{
+    return this.http.get(`https://apiv2.allsportsapi.com/football/?met=H2H&APIkey=${this.key}&firstTeamId=${firstTeamId}&secondTeamId=${secondTeamId}`)
+  }
 }
