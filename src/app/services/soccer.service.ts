@@ -15,11 +15,15 @@ export class SoccerService {
       `https://apiv2.allsportsapi.com/football/?met=Leagues&APIkey=${this.key}`
     );
   }
-  getFixtures():Observable<any> {
-    return this.http.get(`https://apiv2.allsportsapi.com/football/?met=Fixtures&APIkey=${this.key}&from=2022-05-05&to=2022-05-18`)
+  getFixtures(): Observable<any> {
+    return this.http.get(
+      `https://apiv2.allsportsapi.com/football/?met=Fixtures&APIkey=${this.key}&from=2022-05-05&to=2022-05-18`
+    );
   }
-  getFixturesId(matchId:string):Observable<any> {
-    return this.http.get(`https://apiv2.allsportsapi.com/football/?met=Fixtures&APIkey=${this.key}&from=2022-05-05&to=2022-05-18&matchId=${matchId}`)
+  getFixturesId(matchId: string): Observable<any> {
+    return this.http.get(
+      `https://apiv2.allsportsapi.com/football/?met=Fixtures&APIkey=${this.key}&from=2022-05-05&to=2022-05-18&matchId=${matchId}`
+    );
   }
   getCountries(): Observable<any> {
     return this.http.get<Countries[]>(
@@ -31,10 +35,17 @@ export class SoccerService {
       `https://apiv2.allsportsapi.com/football/?met=Probabilities&matchId=86392&APIkey=${this.key}`
     );
   }
-  getOdds():Observable<any>{
-    return this.http.get(`https://apiv2.allsportsapi.com/football/?&met=Odds&matchId=86392&APIkey=${this.key}`)
+  getOdds(): Observable<any> {
+    return this.http.get(
+      `https://apiv2.allsportsapi.com/football/?&met=Odds&matchId=86392&APIkey=${this.key}`
+    );
   }
-  getH2H(firstTeamId:String,secondTeamId:String):Observable<any>{
+  /*getH2H(firstTeamId:String,secondTeamId:String):Observable<any>{
     return this.http.get(`https://apiv2.allsportsapi.com/football/?met=H2H&APIkey=${this.key}&firstTeamId=${firstTeamId}&secondTeamId=${secondTeamId}`)
+  }*/
+  getH2H(): Observable<any> {
+    return this.http
+      .get(`https://apiv2.allsportsapi.com/football/?met=H2H&APIkey=${this.key}&firstTeamId=
+    4294&secondTeamId=4281`);
   }
 }

@@ -12,24 +12,27 @@ export class FixturesComponent implements OnInit {
   matchId: any;
   time: string = '1st Half';
   @Output() closed = new EventEmitter();
-  moreDetail: string = 'Más detalles';
-  showHidden = false;
+  moreDetail:string[]= [];
+  showHidden:boolean[] = [];
   constructor(private soccerService: SoccerService) {}
 
   ngOnInit(): void {
     this.soccerService.getFixtures().subscribe((data) => {
       this.fixtures = data.result;
-      console.log(this.fixtures);
+      this.fixtures.forEach(() => {
+        this.showHidden.push(false)
+        this.moreDetail.push('Más Detalles')
+      });
     });
   }
 
-  HiddenDetail() {
-    if (this.showHidden) {
-      this.showHidden = false;
-      this.moreDetail = 'Más detalles';
+  HiddenDetail(index:number) {
+    if (this.showHidden[index]) {
+      this.showHidden[index] = false;
+      this.moreDetail[index] = 'Más detalles';
     } else {
-      this.showHidden = true;
-      this.moreDetail = 'Menos detalles';
+      this.showHidden[index] = true;
+      this.moreDetail[index] = 'Menos detalles';
     }
   }
   showDetailFixture(matchId: string) {

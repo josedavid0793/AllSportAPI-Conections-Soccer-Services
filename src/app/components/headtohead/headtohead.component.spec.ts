@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HeadToheadComponent } from './head-tohead.component';
+import { HeadtoheadComponent } from './headtohead.component';
 
-describe('HeadToheadComponent', () => {
-  let component: HeadToheadComponent;
-  let fixture: ComponentFixture<HeadToheadComponent>;
+describe('HeadtoheadComponent', () => {
+  let component: HeadtoheadComponent;
+  let fixture: ComponentFixture<HeadtoheadComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HeadToheadComponent ]
+      declarations: [ HeadtoheadComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(HeadToheadComponent);
+    fixture = TestBed.createComponent(HeadtoheadComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

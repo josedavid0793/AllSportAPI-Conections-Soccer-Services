@@ -1,5 +1,5 @@
 <div class="lay-pri">
-  <div class="lay-sup" *ngFor="let fixture of fixtures | ObjToArray">
+  <div class="lay-sup" *ngFor="let fixture of fixtures | ObjToArray , let i =index">
     <div class="div-lea">
       <img class="img-fix-2" src="{{fixture.country_logo}}"><span class="span-co">{{fixture.country_name}}</span>
       <img class="img-fix-2" src="{{fixture.league_logo}}"><span class="span-co">{{fixture.league_name}}</span>
@@ -15,14 +15,14 @@
           </div>
           <span>{{fixture.event_ft_result}}</span>
           <span>{{fixture.event_status}}</span>
-          <button type="button" class="a-more" (click)="showDetailFixture(fixture.event_key)" (click)="HiddenDetail()">{{moreDetail}}</button>
+          <button type="button" class="a-more" (click)="showDetailFixture(fixture.event_key)" (click)="HiddenDetail(i)">{{moreDetail[i]}}</button>
         </div>
         <div class="div-fix">
           <img class="img-fix" src="{{fixture.away_team_logo}}"><span>{{fixture.event_away_team}}</span>
         </div>
       </div>
     </div>
-    <div *ngIf="showHidden">
+    <div *ngIf="showHidden[i]">
       <div class="div-option">
         <a class="a-option">Partido</a>
         <a class="a-option">Cuotas</a>
@@ -74,5 +74,6 @@
     <hr>
 
   </div>
+  <app-headtohead></app-headtohead>
 
 </div>
