@@ -26,7 +26,7 @@
       <div class="div-option">
         <a class="a-option">Partido</a>
         <a class="a-option">Cuotas</a>
-        <a class="a-option">H2H</a>
+          <a class="a-option" (click)="hiddenH2H(i)">H2H</a>
         <a class="a-option">Clasificación</a>
       </div>
       <hr>
@@ -42,11 +42,11 @@
       </div>
       <div *ngFor="let fixture of eventchosen">
         <div class="div-scorer" *ngFor="let goalscore of fixture.goalscorers;index as i;">
-          <div *ngIf="goalscore.info_time == '1st Half'">
+          <div class="div-score" *ngIf="goalscore.info_time == '1st Half'">
             <span class="time-score">{{goalscore.time}}'</span><span class="goal-score">{{goalscore.score}}</span><span
               class="scorer-score">{{goalscore.home_scorer}}</span>
           </div>
-          <div *ngIf="goalscore.info_time == '1st Half'">
+          <div class="div-score" *ngIf="goalscore.info_time == '1st Half'">
             <span class="scorer-score">{{i}}{{goalscore.away_scorer}}</span><span
               class="goal-score">{{goalscore.score}}</span><span class="time-score">{{goalscore.time}}'</span>
           </div>
@@ -60,20 +60,20 @@
       </div>
       <div *ngFor="let fixture of eventchosen">
         <div class="div-scorer" *ngFor="let goalscore of fixture.goalscorers">
-          <div *ngIf="goalscore.info_time == '2nd Half'">
+          <div class="div-score" *ngIf="goalscore.info_time == '2nd Half'">
             <span class="time-score">{{goalscore.time}}'</span><span class="goal-score">{{goalscore.score}}</span><span
               class="scorer-score">{{goalscore.home_scorer}}</span>
           </div>
-          <div *ngIf="goalscore.info_time == '2nd Half'">
+          <div class="div-score" *ngIf="goalscore.info_time == '2nd Half'">
             <span class="scorer-score">{{goalscore.away_scorer}}</span><span
               class="goal-score">{{goalscore.score}}</span><span class="time-score">{{goalscore.time}}'</span>
           </div>
         </div>
       </div>
+      <app-headtohead *ngIf="hiddenh2h[i]"></app-headtohead>
     </div>
     <hr>
 
-  </div>
-  <app-headtohead></app-headtohead>
 
+  </div>
 </div>

@@ -1,0 +1,51 @@
+<div class="show-mobile">
+  <div>
+    <button (click)="toggleMenu()">
+      <img src="./assets/svg/icon_menu.svg" alt="menu">
+    </button>
+    <a href="">
+      <img class="img-logo" src="./assets/image/logo.png" alt="logo">
+    </a>
+    <a href="">
+      <img src="./assets/svg/icon_shopping_cart.svg" alt="logo">
+    </a>
+  </div>
+  <div class="side-menu navbar top-navbar navbar-expand-md navbar-light" [class.active]="showMenu">
+    <button (click)="toggleMenu()">Close</button>
+    <ul>
+      <!--<li *ngFor="let menus of menu"><a [routerLink]="['/pronosticos']" class="a-menu" href="">{{menus}}</a></li>-->
+      <li><a [routerLink]="['/inicio']" class="a-menu">Inicio</a></li>
+      <li><a [routerLink]="['/pronosticos']" class="a-menu">Pronosticos</a></li>
+      <li><a [routerLink]="['/pronosticos']" class="a-menu">Apuestas</a></li>
+      <li><a [routerLink]="['/pronosticos']" class="a-menu">Blog</a></li>
+      <li><a [routerLink]="['/pronosticos']" class="a-menu">Contacto</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="hide-mobile">
+  <div>
+    <nav>
+      <a class="logo" href="">
+        <img class="img-logo" src="./assets/image/logo.png" alt="logo">
+      </a>
+      <ul>
+        <!--<li class="li-nav" *ngFor="let menus of menu"><a class="a-menu" href="">{{menus}}</a></li>-->
+        <li class="li-nav"><a [routerLink]="['/inicio']" class="a-menu">Inicio</a></li>
+        <li class="li-nav"><a [routerLink]="['/pronosticos']" class="a-menu">Menu 2</a></li>
+        <!--<li class="li-nav"><a [routerLink]="['/pronosticos']" class="a-menu">Pronosticos</a></li>-->
+        <!--<li class="li-nav"><a [routerLink]="['/pronosticos']" class="a-menu">Apuestas</a></li>-->
+        <li class="li-nav"><a [routerLink]="['/pronosticos']" class="a-menu">Blog</a></li>
+        <li class="li-nav"><a [routerLink]="['/pronosticos']" class="a-menu">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="info">
+      <div class="account">juegopronostico@gmail.com</div>
+      <div>
+        <a href="">
+          <img src="./assets/svg/icon_shopping_cart.svg" alt="logo">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

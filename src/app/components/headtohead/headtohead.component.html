@@ -1,3 +1,78 @@
-<div ngFor="let head of headtohead">
+<div class="div-first">
+  <div class="div-enfre">Enfretamientos</div>
+  <div class="div-sup" *ngFor="let head of headtohead | ObjToArray">
 
+    <div class="full-con">
+      <div class="div-date">
+        <span class="span-date">{{head.event_date | date:'shortDate'}}</span>
+      </div>
+      <div class="div-league">
+        <span>{{head.country_name}}</span>
+        <span class="span-lea">{{head.league_name}}</span>
+      </div>
+      <div class="div-teams">
+        <span>{{head.event_home_team}}</span>
+        <span>{{head.event_away_team}}</span>
+      </div>
+      <div class="div-event">
+        <span class="result-span">{{head.event_final_result}}</span>
+      </div>
+    </div>
+    <div>
+    </div>
+  </div>
 </div>
+
+<!---Down-->
+<div class="div-first">
+  <div class="div-enfre">
+    Ultimos Partidos: local equipo
+  </div>
+  <div class="div-sup" *ngFor="let head2 of headtohead2 | ObjToArray">
+    <div class="full-con">
+      <div class="div-date">
+        <span class="span-date">{{head2.event_date | date:'shortDate'}}</span>
+      </div>
+      <div class="div-league">
+        <span>{{head2.country_name}}</span>
+        <span class="span-lea">{{head2.league_name}}</span>
+      </div>
+      <div class="div-teams">
+        <span>{{head2.event_home_team}}</span>
+        <span>{{head2.event_away_team}}</span>
+      </div>
+      <div class="div-event">
+        <span class="result-span">{{head2.event_final_result}}</span>
+      </div>
+    </div>
+    <div>
+    </div>
+
+  </div>
+</div>
+
+<div class="div-first">
+  <div class="div-enfre">
+    Ultimos Partidos: visitante equipo
+  </div>
+  <div class="div-sup" *ngFor="let head3 of headtohead3 | ObjToArray">
+    <div class="full-con">
+      <div class="div-date">
+        <span class="span-date">{{head3.event_date | date:'shortDate'}}</span>
+      </div>
+      <div class="div-league">
+        <span>{{head3.country_name}}</span>
+        <span class="span-lea">{{head3.league_name}}</span>
+      </div>
+      <div class="div-teams">
+        <span>{{head3.event_home_team}}</span>
+        <span>{{head3.event_away_team}}</span>
+      </div>
+      <div class="div-event">
+        <span class="result-span">{{head3.event_final_result}}</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+

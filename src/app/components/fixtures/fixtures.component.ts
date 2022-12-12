@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { SoccerService } from 'src/app/services/soccer.service';
+import { HeadtoheadComponent } from '../headtohead/headtohead.component';
 
 @Component({
   selector: 'app-fixtures',
@@ -14,7 +15,10 @@ export class FixturesComponent implements OnInit {
   @Output() closed = new EventEmitter();
   moreDetail:string[]= [];
   showHidden:boolean[] = [];
-  constructor(private soccerService: SoccerService) {}
+  hiddenh2h:boolean[]=[];
+  constructor(private soccerService: SoccerService) {
+
+  }
 
   ngOnInit(): void {
     this.soccerService.getFixtures().subscribe((data) => {
@@ -35,11 +39,16 @@ export class FixturesComponent implements OnInit {
       this.moreDetail[index] = 'Menos detalles';
     }
   }
+  hiddenH2H(index:number){
+    if (this.hiddenh2h[index]) {
+      this.hiddenh2h[index]=false;
+    }else{
+      this.hiddenh2h[index] = true;
+    }
+  }
   showDetailFixture(matchId: string) {
     this.soccerService.getFixturesId(matchId).subscribe((data) => {
       this.eventchosen = data.result;
-      console.log('mensahjejejjejeje' + this.eventchosen);
-
     });
   }
   timeMatch() {
