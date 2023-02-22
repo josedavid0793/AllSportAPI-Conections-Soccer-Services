@@ -1,22 +1,22 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { SoccerService } from 'src/app/services/soccer.service';
-import { HeadtoheadComponent } from '../headtohead/headtohead.component';
-import { MatchDetailComponent } from 'src/app/pages/match-detail/match-detail.component';
-
+import { HeadtoheadComponent } from 'src/app/components/headtohead/headtohead.component';
 @Component({
-  selector: 'app-fixtures',
-  templateUrl: './fixtures.component.html',
-  styleUrls: ['./fixtures.component.sass'],
+  selector: 'app-match-detail',
+  templateUrl: './match-detail.component.html',
+  styleUrls: ['./match-detail.component.sass'],
 })
-export class FixturesComponent implements OnInit {
+export class MatchDetailComponent implements OnInit {
   fixtures: any;
   eventchosen: any;
-  matchId: any;
+  @Input() matchId!: any;
   time: string = '1st Half';
   @Output() closed = new EventEmitter();
   headtohead: any = [];
   headtohead2: any = [];
   headtohead3: any = [];
+  //@Output()firstTeamId: EventEmitter<Number>= new EventEmitter();
+  //@Output()secondTeamId: EventEmitter<Number>= new EventEmitter();
   firstTeamId: string = '';
   secondTeamId: string = '';
   moreDetail: string[] = [];
@@ -26,13 +26,7 @@ export class FixturesComponent implements OnInit {
   constructor(private soccerService: SoccerService) {}
 
   ngOnInit(): void {
-    this.soccerService.getFixtures().subscribe((data) => {
-      this.fixtures = data.result;
-      this.fixtures.forEach(() => {
-        this.showHidden.push(false);
-        this.moreDetail.push('Más Detalles');
-      });
-    });
+    this.DetailFixture(this.matchId);
   }
 
   HiddenDetail(index: number) {
@@ -54,7 +48,7 @@ export class FixturesComponent implements OnInit {
   hiddenLineups() {
     this.hiddenlineup = !this.hiddenlineup;
   }
-  showDetailFixture(matchId: string) {
+  DetailFixture(matchId: string) {
     this.soccerService.getFixturesId(matchId).subscribe((data) => {
       this.eventchosen = data.result;
     });

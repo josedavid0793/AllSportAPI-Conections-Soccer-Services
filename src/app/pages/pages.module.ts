@@ -18,11 +18,17 @@ import { HeadtoheadComponent } from '../components/headtohead/headtohead.compone
 import { LoginComponent } from '../auth/login/login.component';
 import { RegisterComponent } from '../auth/register/register.component';
 import { NopagesfoundComponent } from './nopagesfound/nopagesfound.component';
+import { LineupsComponent } from '../components/lineups/lineups.component';
+import { LeaguesComponent } from '../components/leagues/leagues.component';
 
 //pages
 import { HomeComponent } from './home/home.component';
 import { PronosticosComponent } from './pronosticos/pronosticos.component';
 import { FixturesComponent } from '../components/fixtures/fixtures.component';
+import { BlogComponent } from './blog/blog.component';
+import { ContactComponent } from './contact/contact.component';
+import { MatchDetailComponent } from './match-detail/match-detail.component';
+
 
 @NgModule({
   declarations: [
@@ -37,6 +43,11 @@ import { FixturesComponent } from '../components/fixtures/fixtures.component';
     LoginComponent,
     RegisterComponent,
     NopagesfoundComponent,
+    LineupsComponent,
+    BlogComponent,
+    ContactComponent,
+    MatchDetailComponent,
+    LeaguesComponent,
   ],
   exports: [
     HomeComponent,
@@ -50,6 +61,10 @@ import { FixturesComponent } from '../components/fixtures/fixtures.component';
     LoginComponent,
     RegisterComponent,
     NopagesfoundComponent,
+    LineupsComponent,
+    BlogComponent,
+    ContactComponent,
+    LeaguesComponent,
   ],
   imports: [
     CommonModule,

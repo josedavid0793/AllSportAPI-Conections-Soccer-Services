@@ -8,6 +8,7 @@ import { PagesModule } from './pages/pages.module';
 //components
 import { AppComponent } from './app.component';
 
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -15,7 +16,6 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    PagesModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

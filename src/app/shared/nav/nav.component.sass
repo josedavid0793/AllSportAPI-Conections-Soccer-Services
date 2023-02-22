@@ -34,6 +34,7 @@
     display: flex
     justify-content: space-between
     align-items: center
+    height: 7.5em
 
   .logo
     margin-right: 1em
@@ -41,6 +42,9 @@
   nav
     display: flex
     align-items: center
+    flex-direction: row
+    margin-top: 5em
+    margin-left: 5em
     ul
       display: flex
       list-style: none
@@ -48,6 +52,11 @@
         margin: 0 .2em
         color: inherit
         text-decoration: none
+        padding: 0.313em
+        &.active
+          border: 1px solid #EAECEE
+          color: #E59866
+          border-radius: 0.313em
 
 
 
@@ -64,7 +73,18 @@ ul
   list-style: none
 .a-menu
   text-decoration: none
-
+.nav-sup
+  width: 100%
+  height: 7.5em
+  background: #F7F9F9
+.icon-li
+  width: 12px
+  height: 12px
+  margin-right: 4px
+.div-option-user
+  display: flex
+.btn-register
+  margin-right: 5px
 
 /* Medium only */
 @media screen and (min-width: 40em) and (max-width: 63.9375em)
@@ -91,11 +111,8 @@ ul
   margin-right: 15px !important
 .li-nav
   &:hover
-    background:#F4F6F7
     cursor: pointer
-    border-radius: 7px
-    height: 25px
-    font-size: 20px
+
 
 
 

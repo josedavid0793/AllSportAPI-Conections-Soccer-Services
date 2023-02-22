@@ -9,26 +9,15 @@ import { SoccerService } from 'src/app/services/soccer.service';
 })
 export class PronosticosComponent implements OnInit {
 
-  leagues: Leagues[]=[];
-  showHidden = false;
-  //result:any;
-  //league_key:any;
 
   constructor(private soccerService: SoccerService) { }
 
 
 
   ngOnInit(): void {
-    //debugger;
-    this.soccerService.getLeagues().subscribe(data=>{
-      this.leagues=data.result;
-      //console.log(this.leagues+this.league_key)
-  });
+
 
   }
-  HiddenLeague(){
-    this.showHidden=!this.showHidden;
-     }
 
 
 }

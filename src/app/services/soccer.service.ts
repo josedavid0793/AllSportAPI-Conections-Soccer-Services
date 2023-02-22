@@ -18,7 +18,7 @@ export class SoccerService {
   }
   getFixtures(): Observable<any> {
     return this.http.get(
-      `https://apiv2.allsportsapi.com/football/?met=Fixtures&APIkey=${this.key}&from=2022-05-05&to=2022-05-18`
+      `https://apiv2.allsportsapi.com/football/?met=Fixtures&APIkey=${this.key}&from=2022-05-18&to=2022-05-18`
     );
   }
   getFixturesId(matchId: string): Observable<any> {

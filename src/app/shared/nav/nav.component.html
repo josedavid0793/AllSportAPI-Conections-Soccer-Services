@@ -22,28 +22,37 @@
     </ul>
   </div>
 </div>
+<div class="nav-sup">
+  <div>
 
+  </div>
+</div>
 <div class="hide-mobile">
   <div>
     <nav>
       <a class="logo" href="">
-        <img class="img-logo" src="./assets/image/logo.png" alt="logo">
+        <img class="img-logo" src="" alt="logo">
       </a>
       <ul>
         <!--<li class="li-nav" *ngFor="let menus of menu"><a class="a-menu" href="">{{menus}}</a></li>-->
-        <li class="li-nav"><a [routerLink]="['/inicio']" class="a-menu">Inicio</a></li>
-        <li class="li-nav"><a [routerLink]="['/pronosticos']" class="a-menu">Menu 2</a></li>
+        <li class="li-nav"><a routerLinkActive="active" [routerLink]="['/inicio']" class="a-menu"><img class="icon-li" src="./assets/icon/hogar.png">Inicio</a></li>
+        <li class="li-nav"><a routerLinkActive="active" [routerLink]="['/futbol']" class="a-menu"><img class="icon-li" src="./assets/icon/balon-de-futbol.png">Futbol</a></li>
+        <li class="li-nav"><a routerLinkActive="active" [routerLink]="['/baloncesto']" class="a-menu"><img class="icon-li" src="./assets/icon/balon-de-baloncesto.png">Baloncesto</a></li>
+        <li class="li-nav"><a routerLinkActive="active" [routerLink]="['/beisbol']" class="a-menu"><img class="icon-li" src="./assets/icon/balon-de-beisbol.png">Beisbol</a></li>
         <!--<li class="li-nav"><a [routerLink]="['/pronosticos']" class="a-menu">Pronosticos</a></li>-->
         <!--<li class="li-nav"><a [routerLink]="['/pronosticos']" class="a-menu">Apuestas</a></li>-->
-        <li class="li-nav"><a [routerLink]="['/pronosticos']" class="a-menu">Blog</a></li>
-        <li class="li-nav"><a [routerLink]="['/pronosticos']" class="a-menu">Contacto</a></li>
+        <li class="li-nav"><a routerLinkActive="active" [routerLink]="['/blog']" class="a-menu"><img class="icon-li" src="./assets/icon/blog.png">Blog</a></li>
+        <li class="li-nav"><a routerLinkActive="active" [routerLink]="['/contacto']" class="a-menu"><img class="icon-li" src="./assets/icon/correo-de-contacto.png">Contacto</a></li>
       </ul>
     </nav>
     <div class="info">
-      <div class="account">juegopronostico@gmail.com</div>
-      <div>
-        <a href="">
-          <img src="./assets/svg/icon_shopping_cart.svg" alt="logo">
+      <div class="account"></div>
+      <div class="div-option-user">
+        <a class="btn btn-light btn-register" href="">
+          Registro
+        </a>
+        <a class="btn btn-light" href="">
+          Login
         </a>
       </div>
     </div>

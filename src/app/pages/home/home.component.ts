@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
     }else if (this.ingreso > 1500000) {
       this.porcentaje=this.ingreso*0.10;
       this.resultado=this.porcentaje;
-      this.interes=this.resultado*80;
+      this.interes=this.resultado*0.3;
     }else if (this.ingreso < 500000) {
       alert("Sus ingresos no son los adecuados para jugar.");
       return;
