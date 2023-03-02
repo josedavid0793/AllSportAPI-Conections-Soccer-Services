@@ -11,10 +11,10 @@
         </div>
         <div class="div-result">
           <div>
-            <span>{{fixture.event_date | date:'shortDate'}}</span><span class="span-time">{{fixture.event_time}}</span>
+            <span class="span-date">{{fixture.event_date | date:'shortDate'}}</span><span class="span-time">{{fixture.event_time}}</span>
           </div>
-          <span>{{fixture.event_ft_result}}</span>
-          <span>{{fixture.event_status}}</span>
+          <span class="span-result">{{fixture.event_ft_result}}</span>
+          <span class="span-status">{{fixture.event_status}}</span>
           <a [routerLink]="['/fixtures/',fixture.event_key]">Dinamica</a>
           <button type="button" class="a-more" (click)="showDetailFixture(fixture.event_key)" (click)="HiddenDetail(i)">{{moreDetail[i]}}</button>
         </div>
@@ -43,12 +43,12 @@
       </div>
       <div *ngFor="let fixture of eventchosen">
         <div class="div-scorer" *ngFor="let goalscore of fixture.goalscorers;index as i;">
-          <div class="div-score" *ngIf="goalscore.info_time == '1st Half'">
+          <div class="div-score" *ngIf="goalscore.info_time == '1st Half' && goalscore.home_scorer==true">
             <span class="time-score">{{goalscore.time}}'</span><span class="goal-score">{{goalscore.score}}</span><span
-              class="scorer-score">{{goalscore.home_scorer}}</span>
+              class="scorer-score">{{goalscore.home_scorer}}</span><span class="scorer-score strong">{{goalscore.info}}</span>
           </div>
           <div class="div-score" *ngIf="goalscore.info_time == '1st Half'">
-            <span class="scorer-score">{{i}}{{goalscore.away_scorer}}</span><span
+            <span class="scorer-score strong">{{goalscore.info}}</span><span class="scorer-score">{{goalscore.away_scorer}}</span><span
               class="goal-score">{{goalscore.score}}</span><span class="time-score">{{goalscore.time}}'</span>
           </div>
         </div>
@@ -61,12 +61,12 @@
       </div>
       <div *ngFor="let fixture of eventchosen">
         <div class="div-scorer" *ngFor="let goalscore of fixture.goalscorers">
-          <div class="div-score" *ngIf="goalscore.info_time == '2nd Half'">
-            <span class="time-score">{{goalscore.time}}'</span><span class="goal-score">{{goalscore.score}}</span><span
-              class="scorer-score">{{goalscore.home_scorer}}</span>
+          <div class="div-score" *ngIf="goalscore.info_time === '2nd Half'">
+            <span class="time-score" *ngIf="">{{goalscore.time}}'</span><span class="goal-score">{{goalscore.score}}</span><span
+              class="scorer-score" *ngIf="">{{goalscore.home_scorer}}</span><span class="scorer-score strong">{{goalscore.info}}</span>
           </div>
-          <div class="div-score" *ngIf="goalscore.info_time == '2nd Half'">
-            <span class="scorer-score">{{goalscore.away_scorer}}</span><span
+          <div class="div-score" *ngIf="goalscore.info_time === '2nd Half'">
+            <span class="scorer-score strong">{{goalscore.info}}</span><span class="scorer-score">{{goalscore.away_scorer}}</span><span
               class="goal-score">{{goalscore.score}}</span><span class="time-score">{{goalscore.time}}'</span>
           </div>
         </div>
